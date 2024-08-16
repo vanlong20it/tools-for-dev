@@ -1,4 +1,5 @@
 "use client";
+import PageTitle from "@/components/PageTitle";
 import camelcaseKeys from "camelcase-keys";
 import React, { FormEvent, useState } from "react";
 
@@ -28,25 +29,27 @@ const ConvertPage = () => {
 
   return (
     <main>
-      <form
-        onSubmit={handleConvert}
-        method="get"
-        className="max-w-xl py-4 mx-auto"
-      >
-        <textarea
-          value={text}
-          onChange={(event) => setText(event.target.value)}
-          name=""
-          id=""
-          rows={20}
-          className="textarea textarea-bordered w-full"
-        ></textarea>
-        <div className="flex justify-center">
-          <button type="submit" className="btn btn-primary">
-            Convert now
-          </button>
-        </div>
-      </form>
+      <div className="container">
+        <PageTitle>Convert object from any case to camelCase</PageTitle>
+        <form
+          onSubmit={handleConvert}
+          method="get"
+        >
+          <textarea
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+            name=""
+            id=""
+            rows={20}
+            className="textarea textarea-bordered w-full"
+          ></textarea>
+          <div className="flex justify-center">
+            <button type="submit" className="btn btn-primary">
+              Convert now
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
   );
 };
