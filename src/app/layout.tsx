@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro as Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import cn from "@/utils/cn";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={cn(inter.className, "pt-20 min-h-dvh")}>
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );
